@@ -5,17 +5,19 @@
 # Site
 title: Caesar-0925's WebSite
 subtitle: ''
-description: ''
-keywords:
+description: 路漫漫其修远兮，吾将上下而求索。个人技术博客，专注分享iOS（Objective-C、Swift、SwiftUI）、Web（HTML、CSS、Javascript）、微信小程序、Flutter、数据结构与算法等编程知识。深夜吐血维护，感谢大家支持 ❤️🌹😊。
+keywords: iOS（Objective-C、Swift、SwiftUI）、Web（HTML、CSS、Javascript）、微信小程序、Flutter、数据结构与算法
 author: Caesar-0925
-language: en
-timezone: ''
+language: 
+  - zh-Hans
+  - en
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: https://caesar-0925.github.io/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:category/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks

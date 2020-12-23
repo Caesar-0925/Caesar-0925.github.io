@@ -91,13 +91,13 @@ profile:
   # You can set Avatar URL directly
   avatar: https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm
 
-  bio: Awesome guy.
+  bio: 路漫漫其修远兮，吾将上下而求索。个人技术博客，专注分享iOS（Objective-C、Swift、SwiftUI）、Web（HTML、CSS、Javascript）、微信小程序、Flutter、数据结构与算法等编程知识。深夜吐血维护，感谢大家支持 ❤️🌹😊。
 
 # Sidebar navigation links
 menu:
   Home: /
-  # About: /about
-  # Links: /links
+  Search: /search
+  About: /about
   # Github: https://github.com/username
 
 # Social media URL
@@ -147,7 +147,7 @@ footer:
 # Page
 page:
   # Display Table of content, default to `true`
-  toc: true
+  # toc: false
 
   # Display reward, default to `false`
   reward: true
@@ -165,7 +165,7 @@ post:
   #   text: ":words words in :minutes min"
 
   # The following settings are the same as the page
-  # toc: false
+  toc: true
   reward: true
   copyright: true
 
@@ -271,11 +271,7 @@ copyright:
   author: true
 
   # Display link, default to `true`
-  # link: false
-
-  license: Attribution-NonCommercial-NoDerivatives 4.0 International
-    (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\"
-    rel=\"external nofollow\" target=\"_blank\">CC BY-NC-ND 4.0</a>)
+  link: false
 
   # Display published date, default to `false`
   published: true
@@ -283,8 +279,13 @@ copyright:
   # Display updated date, default to `false`
   updated: true
 
+  # license text
+  license: Attribution-NonCommercial-NoDerivatives 4.0 International
+    (<a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\"
+    rel=\"external nofollow\" target=\"_blank\">CC BY-NC-ND 4.0</a>)
+
   # Custom text, override above settings
-  custom: 尊重原创，不许转载
+  # custom: my copyright
 
 # Comments
 # Built-in support Disqus (https://disqus.com) and LiveRe (https://livere.com),
@@ -295,7 +296,7 @@ comments:
     # Or you can set disqus script URL directly
     script: //disqus_shortname.disqus.com/embed.js
     # Autoload, default to `true`, set to `false` to display a button
-    # autoload: false
+    autoload: true
 
   # livere:
   #   uid: livere_uid
