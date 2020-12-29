@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>5. 最长回文子串 - Caesar-0925's WebSite</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="https://caesar-0925.github.io/2020/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<meta name="description" content="题目 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设  s 的最大长度为 1000。 示例 1： 输入: “babad” 输出: “bab” 注意: “aba” 也是一个有效答案。 示例 2： 输入: “cbbd” 输出: “bb” 题解 方法一：动态规划 Javascript 版本 5. 最长回文子串longestPalindrome.js1234567891011121314151">
+<meta property="og:type" content="website">
+<meta property="og:title" content="5. 最长回文子串">
+<meta property="og:url" content="https://caesar-0925.github.io/2020/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/index.html">
+<meta property="og:site_name" content="Caesar-0925&#39;s WebSite">
+<meta property="og:description" content="题目 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设  s 的最大长度为 1000。 示例 1： 输入: “babad” 输出: “bab” 注意: “aba” 也是一个有效答案。 示例 2： 输入: “cbbd” 输出: “bb” 题解 方法一：动态规划 Javascript 版本 5. 最长回文子串longestPalindrome.js1234567891011121314151">
+<meta property="og:locale">
+<meta property="og:image" content="https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm">
+<meta property="article:published_time" content="2020-12-29T09:34:00.000Z">
+<meta property="article:modified_time" content="2020-12-29T13:55:00.586Z">
+<meta property="article:author" content="Caesar-0925">
+<meta property="article:tag" content="+ 动态规划">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm">
+<script type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","publisher":{"@type":"Person","name":"Caesar-0925","description":"路漫漫其修远兮，吾将上下而求索。个人技术博客，专注分享iOS（Objective-C、Swift、SwiftUI）、Web（HTML、CSS、Javascript）、微信小程序、Flutter、数据结构与算法等编程知识。深夜吐血维护，感谢大家支持 ❤️🌹😊。","image":"https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm"},"url":"https://caesar-0925.github.io","image":"https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm","description":"路漫漫其修远兮，吾将上下而求索。个人技术博客，专注分享iOS（Objective-C、Swift、SwiftUI）、Web（HTML、CSS、Javascript）、微信小程序、Flutter、数据结构与算法等编程知识。深夜吐血维护，感谢大家支持 ❤️🌹😊。","author":{"@type":"Person","name":"Caesar-0925","description":"路漫漫其修远兮，吾将上下而求索。个人技术博客，专注分享iOS（Objective-C、Swift、SwiftUI）、Web（HTML、CSS、Javascript）、微信小程序、Flutter、数据结构与算法等编程知识。深夜吐血维护，感谢大家支持 ❤️🌹😊。","image":"https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"}},{"@context":"http://schema.org","@type":"Article","articleSection":"+ 数据结构与算法","url":"https://caesar-0925.github.io/2020/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/","headline":"5. 最长回文子串","image":"https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm","datePublished":"2020-12-29T09:34:00.000Z","dateModified":"2020-12-29T13:55:00.586Z","keywords":"+ 动态规划","description":"路漫漫其修远兮，吾将上下而求索。个人技术博客，专注分享iOS（Objective-C、Swift、SwiftUI）、Web（HTML、CSS、Javascript）、微信小程序、Flutter、数据结构与算法等编程知识。深夜吐血维护，感谢大家支持 ❤️🌹😊。","publisher":{"@type":"Organization","name":"Caesar-0925's WebSite","logo":{"@type":"ImageObject","url":"https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm"}},"author":{"@type":"Person","name":"Caesar-0925","description":"路漫漫其修远兮，吾将上下而求索。个人技术博客，专注分享iOS（Objective-C、Swift、SwiftUI）、Web（HTML、CSS、Javascript）、微信小程序、Flutter、数据结构与算法等编程知识。深夜吐血维护，感谢大家支持 ❤️🌹😊。","image":"https://1.gravatar.com/avatar/d281c28ea0c330416f68c641a9fd4d01?s=480&d=mm"},"inLanguage":{"@type":"Language","alternateName":"zh-Hans"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://caesar-0925.github.io/2020/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/"}}]</script>
+
+<!-- hexo injector head_end start --><link href="//fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat" rel="stylesheet"><link href="/styles.43478ea7e28ed563c48b.css" rel="stylesheet">
+<script src="/config.e5a0d0f7fbffc8519651.js"></script>
+
+<link rel="stylesheet" href="/theme.2bc0c974e80792cbc295.css" is="theme">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"></head>
+<body lang="zh-Hans"><!-- hexo injector body_begin start --><is-a></is-a><!-- hexo injector body_begin end --><!-- hexo injector body_end start --><script src="/runtime.b15aa7186c559b492b7d.js"></script><script src="/polyfills.824ff89b5f3ca4543a31.js"></script><script src="/main.03652fc423a687c817e8.js"></script><!-- hexo injector body_end end --></body>
+</html>
